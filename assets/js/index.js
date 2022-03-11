@@ -68,24 +68,6 @@ btnRegistrar.addEventListener(
         }
       }
     })();
-    let ruta = "";
-    switch (animal.value) {
-      case "Leon":
-        ruta = "Leon.png";
-        break;
-      case "Lobo":
-        ruta = "Lobo.jpg";
-        break;
-      case "Oso":
-        ruta = "Oso.jpg";
-        break;
-      case "Serpiente":
-        ruta = "Serpiente.jpg";
-        break;
-      default:
-        ruta = "Aguila.png";
-        break;
-    }
   },
   false
 );
