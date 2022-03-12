@@ -48,20 +48,17 @@ btnRegistrar.addEventListener(
         }
       }
     }
-    
     const dataAnimal = (async () => {
       const data = await obtenerData;
       const dataA = data.animales;
-      for (const iterator of dataA) {
-        if (iterator.name == animal.value) {
-          console.log(iterator.sonido + "Iterador " + iterator.imagen);
-          const ruta = "./assets/imgs/" + iterator.imagen;
+      for (const i of dataA) {
+        if (i.name == animal.value) {
           const animalcard1 = new Animal(
             animal.value,
             edad.value,
-            ruta,
+            "./assets/imgs/" + i.imagen,
             comentarios.value,
-            iterator.sonido
+            "./assets/sounds/" + i.sonido
           );
           animalcard1.listAnimals("cardanimal");
           return;

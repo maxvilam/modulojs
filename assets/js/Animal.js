@@ -24,12 +24,10 @@ export default class Animal {
   listAnimals(id) {
     const data = document.getElementById(id);
     data.innerHTML += `
-    <div class="col">
+    <div class="col-4">
             <div class="card">
               <img src="${this.foto}" class="card-img-top" alt="Foto Animal">
-              <div class="card-body bg-secondary">
-              <img width="50px" src="assets/imgs/audio.svg" alt="">
-              </div>
+              <button class="bg-dark"><img width="50px" src="assets/imgs/audio.svg"  alt=""></button>
             </div>
     </div>`;
   }
