@@ -20,16 +20,6 @@ const obtenerData = (async () => {
     console.error(error);
   }
 })();
-/* const dataAnimal = (async (animal) => {
-  const data =await obtenerData;
-  const dataA =data.animales;
-  for (const iterator of dataA) {
-    if (iterator.name==animal) {
-      console.log("Iterador " +iterator.imagen);
-      return iterator.imagen;
-    }    
-  };
-})(); */
 
 btnRegistrar.addEventListener(
   "click",
@@ -48,6 +38,7 @@ btnRegistrar.addEventListener(
         }
       }
     }
+
     const dataAnimal = (async () => {
       const data = await obtenerData;
       const dataA = data.animales;
@@ -60,7 +51,35 @@ btnRegistrar.addEventListener(
             comentarios.value,
             "./assets/sounds/" + i.sonido
           );
-          animalcard1.listAnimals("cardanimal");
+          let baudio = "";
+          switch (animal.value) {
+            case "Leon":
+              baudio =
+                '<button class="bg-dark" onclick="audioleon();"><img width="50px" src="assets/imgs/audio.svg"  alt=""></button>';
+              break;
+            case "Lobo":
+              baudio =
+                '<button class="bg-dark" onclick="audiolobo();"><img width="50px" src="assets/imgs/audio.svg"  alt=""></button>';
+              break;
+            case "Oso":
+              baudio =
+                '<button class="bg-dark" onclick="audiooso();"><img width="50px" src="assets/imgs/audio.svg"  alt=""></button>';
+              break;
+
+            case "Serpiente":
+              baudio =
+                '<button class="bg-dark" onclick="audioserpiente();"><img width="50px" src="assets/imgs/audio.svg"  alt=""></button>';
+              break;
+
+            case "Aguila":
+              baudio =
+                '<button class="bg-dark" onclick="audioaguila();"><img width="50px" src="assets/imgs/audio.svg"  alt=""></button>';
+              break;
+
+            default:
+              break;
+          }
+          animalcard1.listAnimals("cardanimal", baudio);
           return;
         }
       }

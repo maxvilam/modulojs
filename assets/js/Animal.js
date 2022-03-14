@@ -21,14 +21,20 @@ export default class Animal {
   get sonido() {
     return this._sonido();
   }
-  listAnimals(id) {
+  reproducir() {
+    var music = new Audio(this.sonido);
+    music.play();
+  }
+  listAnimals(id, baudio) {
     const data = document.getElementById(id);
-    data.innerHTML += `
+    data.innerHTML +=
+      `
     <div class="col-4">
-            <div class="card">
-              <img src="${this.foto}" class="card-img-top" alt="Foto Animal">
-              <button class="bg-dark"><img width="50px" src="assets/imgs/audio.svg"  alt=""></button>
-            </div>
+    <div class="card">
+    <img src="${this.foto}" class="card-img-top" alt="${this.nombre}">` +
+      baudio +
+      `
+    </div>
     </div>`;
   }
 }
